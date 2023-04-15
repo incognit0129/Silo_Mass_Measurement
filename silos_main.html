@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vertical Progress Bar Widget Example</title>
+
+  <style>
+    .wrapper {
+
+      display: inline-flex;
+   
+      
+   
+      margin-left: 100px;
+      width: 400px;
+      margin-top: 100px;
+      flex-direction: column;
+      background-color: white;
+     
+      box-shadow: 0 10px 25px rgb(0 0 0 / 0.2);
+
+    }
+
+
+    .progress-container {
+      height: 400px;
+     
+      width: 255px;
+
+      margin-left: 80px;
+     
+      margin-top: 250px;
+
+      transform: translateY(-50%);
+      position: relative;
+    
+
+    }
+
+
+    .overlay{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+
+.progress-bar {
+      height: 0;
+      width: 250px;
+      background-color: #4CAF50;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: height 0.5s;
+      margin-top: 300px;
+      margin-left: 3px;
+     
+
+    }
+    .progress-label {
+     
+      color: black;
+      background-color: whitesmoke;
+      
+      font-size: 25px;
+      font-weight: bolder;
+      height: 35px;
+      width: 398px;
+      text-align: center;
+
+    }
+
+    .progress-label1 {
+     
+      color: black;
+
+     
+      font-size: 25px;
+      font-weight: bolder;
+      margin-top: 10px;
+      
+    }
+    .height{
+      width: 50%;
+      margin-left: 20px;
+      background-color: whitesmoke;
+     
+    }
+    .mass{
+      width: 50%;
+      background-color: whitesmoke;
+      
+    }
+
+
+
+    .labels{
+      display: inline-flex;
+   
+    }
+
+
+
+    .progress-height {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Mulish', sans-serif;
+      font-size: 20px;
+      background-color: whitesmoke;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links li:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="/koozie.PNG" alt="">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Calculator</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="wrapper">
+    <div class="progress-label">Silo 1</div>
+
+   
+    <div class="progress-container">
+
+      <div class="progress-bar" id="progress1"></div>
+      <div class="progress-height" id="progress1-height"></div>
+
+      <img src="/cylinder-cone-bottom1.png" class="overlay" alt="">
+    </div>
+
+
+    <div class="labels">
+
+      <div class="mass"> 
+        <label for="massLabel1">Mass</label>
+         <div class="progress-label1" id="massLabel1"></div>
+                    
+      </div>
+
+       <div class="height"> 
+      <label for="heightLabel1">Material Height</label>
+       <div class="progress-label1" id="heightLabel1"></div>
+                  
+    </div>
+  
+  </div>
+
+
+   
+  </div>
+
+
+
+  <div class="wrapper">
+    
+    <div class="progress-label">Silo 2</div>
+   
+    <div class="progress-container">
+      <div class="progress-bar" id="progress2"></div>
+      <img src="/cylinder-cone-bottom1.png" class="overlay" alt="">
+      <div class="progress-height" id="progress2-height"></div>
+
+
+    </div>
+    
+    
+
+    <div class="labels">
+
+      <div class="mass"> 
+        <label for="massLabel1">Mass</label>
+         <div class="progress-label1" id="massLabel2"></div>
+                    
+      </div>
+
+       <div class="height"> 
+      <label for="heightLabel2">Material Height</label>
+       <div class="progress-label1" id="heightLabel2"></div>
+                  
+    </div>
+  
+  </div>
+
+
+
+
+    </div>
+ 
+
+
+
+
+  <div class="wrapper">
+    <div class="progress-label">Silo 3</div>
+   
+    <div class="progress-container">
+
+      <div class="progress-bar" id="progress3"></div>
+      <div class="progress-height" id="progress3-height"></div>
+      <img src="/cylinder-cone-bottom1.png" class="overlay" alt="">
+
+    </div>
+
+
+
+    <div class="labels">
+
+      <div class="mass"> 
+        <label for="massLabel3">Mass</label>
+         <div class="progress-label1" id="massLabel3"></div>
+                    
+      </div>
+
+       <div class="height"> 
+      <label for="heightLabel3">Material Height</label>
+       <div class="progress-label1" id="heightLabel3"></div>
+                  
+    </div>
+  
+  </div>
+
+
+
+
+
+
+
+
+    <div>
+       <div class="progress-label1" id="massLabel3"></div>
+
+    </div>
+  </div>
+
+
+
+
+  <script>
+
+
+    const progress1 = document.getElementById("progress1");
+    const progress2 = document.getElementById("progress2");
+    const progress3 = document.getElementById("progress3");
+
+
+    const progress1Height = document.getElementById("progress1-height");
+    const progress2Height = document.getElementById("progress2-height");
+    const progress3Height = document.getElementById("progress3-height");
+
+    const progress1MassLabel1 = document.getElementById("massLabel1");
+    const progress2MassLabel2 = document.getElementById("massLabel2");
+    const progress3MassLabel3 = document.getElementById("massLabel3");
+
+    const heightLabel1 = document.getElementById("heightLabel1");
+    const heightLabel2 = document.getElementById("heightLabel2");
+    const heightLabel3 = document.getElementById("heightLabel3");
+
+
+
+
+
+    //get the data
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        // Populate the table with the JSON data
+        console.log(data.Silo1);
+        console.log(data.Silo2);
+        console.log(data.Silo3);
+
+
+
+
+        // Update the height of the progress bars with a random number (between 0 and 100)
+        //function updateProgress() {
+
+      //declarations
+      let pi = Math.PI
+      let radius = 56.25
+      
+      //rel world heights
+      let cylinderHeight = 14.67
+      let coneHeight = 7.33
+
+
+        //Silo densities for volume calc
+      silo1Density = 35.2
+      silo2Density = 37.75
+      silo3Density = 55.95
+
+      //cone volume
+      let coneVolume = 427
+
+      //cone mass
+      let fullConeMassSilo1 = coneVolume * silo1Density
+      let fullConeMassSilo2 = coneVolume * silo2Density
+      let fullConeMassSilo3 = coneVolume * silo3Density
+      
+
+        
+
+          //raw value converted to height for percentages
+
+
+        const randomHeight1 = data.Silo1;
+        const randomHeight2 = data.Silo2;
+        const randomHeight3 = data.Silo3;
+
+
+        //calculate silo material height
+        silo1Height =((data.Silo1/100) *22).toFixed(2)
+        silo2Height =( (data.Silo2/100) *22).toFixed(2)
+        silo3Height = ((data.Silo3/100) *22 ).toFixed(2)
+          //
+        
+
+        //calculate cylinder volume
+        cylinder1Volume = pi*radius*(silo1Height-7.33)
+        cylinder2Volume = pi*radius*(silo2Height-7.33)
+        cylinder3Volume = pi*radius*(silo3Height-7.33)
+        
+        //totals 
+        silo1TotalVolume = cylinder1Volume + coneVolume
+        silo2TotalVolume = cylinder2Volume + coneVolume
+        silo3TotalVolume = cylinder3Volume + coneVolume
+    
+        //total mass
+        silo1TotalMass = Math.floor(silo1TotalVolume * silo1Density)
+        silo2TotalMass = Math.floor(silo2TotalVolume * silo2Density)
+        silo3TotalMass = Math.floor(silo3TotalVolume * silo3Density)
+
+       
+
+        progress1.style.height = randomHeight1 + "%";
+        progress2.style.height = randomHeight2 + "%";
+        progress3.style.height = randomHeight3 + "%";
+
+        progress1Height.innerHTML = randomHeight1 + " %"
+        progress2Height.innerHTML = randomHeight2 + " %"
+        progress3Height.innerHTML = randomHeight3 + " %"
+
+
+
+        progress1MassLabel1.innerText = silo1TotalMass + " Lbs"
+        progress2MassLabel2.innerText = silo2TotalMass + " Lbs"
+        progress3MassLabel3.innerText = silo3TotalMass + " Lbs"
+        
+        heightLabel1.innerText = silo1Height + " Ft"
+        heightLabel2.innerText = silo2Height + " Ft"
+        heightLabel3.innerText = silo3Height + " Ft"
+        
+        //}
+      });
+
+// Call the updateProgress function every 1 second
+
+
+
+  </script>
+</body>
+
+</html>
